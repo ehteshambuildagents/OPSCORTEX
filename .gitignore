@@ -1,0 +1,19 @@
+# Secrets
+.env
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Runtime artifacts / logs
+audit_log.jsonl
+*.jsonl
+*.log
+
+# Local tooling / editor state
+.claude/
+.idea/
+.vscode/
+*.egg-info/

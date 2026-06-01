@@ -1,0 +1,32 @@
+{"step":"ingest","status":"ok","model_used":null,"inputs":"scenario=payment_failure_spike","outputs":"7 signals from 4 sources: app_metrics, infra_alerts, payment_events, support_tickets","timestamp":"2026-06-01T08:36:25.311040Z"}
+{"step":"detect","status":"ok","model_used":null,"inputs":"7 signals","outputs":"1 anomalies; severity={'CRITICAL': 1}","timestamp":"2026-06-01T08:36:25.314638Z"}
+{"step":"triage","status":"ok","model_used":"claude-haiku-4-5-20251001 (offline)","inputs":"anomaly=payment_failure_rate","outputs":"CRITICAL/P0","timestamp":"2026-06-01T08:36:25.319623Z"}
+{"step":"rca","status":"ok","model_used":"claude-sonnet-4-6 (offline)","inputs":"anomaly=payment_failure_rate; retrieval_conf=0.59","outputs":"conf=0.73; cites=3","timestamp":"2026-06-01T08:36:25.321077Z"}
+{"step":"plan","status":"ok","model_used":"claude-sonnet-4-6 (offline)","inputs":"anomaly=payment_failure_rate","outputs":"4 steps; risk=high; conf=0.70","timestamp":"2026-06-01T08:36:25.323187Z"}
+{"step":"route","status":"ok","model_used":null,"inputs":"plan=plan_3380a2ae","outputs":"HITL: severity CRITICAL, high-risk step, destructive action, customer-facing action","timestamp":"2026-06-01T08:36:25.324458Z"}
+{"step":"auto_action","status":"skipped","model_used":null,"inputs":"","outputs":"no auto-eligible plans","timestamp":"2026-06-01T08:36:25.325857Z"}
+{"step":"hitl","status":"pending","model_used":null,"inputs":"plan=plan_3380a2ae","outputs":"pending (Queued for external approver (Slack/email/dashboard).)","timestamp":"2026-06-01T08:36:25.328487Z"}
+{"step":"ingest","status":"ok","model_used":null,"inputs":"scenario=ticket_surge","outputs":"7 signals from 4 sources: app_metrics, infra_alerts, payment_events, support_tickets","timestamp":"2026-06-01T08:36:25.335454Z"}
+{"step":"detect","status":"ok","model_used":null,"inputs":"7 signals","outputs":"1 anomalies; severity={'MEDIUM': 1}","timestamp":"2026-06-01T08:36:25.337226Z"}
+{"step":"triage","status":"ok","model_used":"claude-haiku-4-5-20251001 (offline)","inputs":"anomaly=ticket_volume","outputs":"MEDIUM/P2","timestamp":"2026-06-01T08:36:25.341683Z"}
+{"step":"rca","status":"ok","model_used":"claude-sonnet-4-6 (offline)","inputs":"anomaly=ticket_volume; retrieval_conf=0.61","outputs":"conf=0.74; cites=3","timestamp":"2026-06-01T08:36:25.344159Z"}
+{"step":"plan","status":"ok","model_used":"claude-sonnet-4-6 (offline)","inputs":"anomaly=ticket_volume","outputs":"3 steps; risk=low; conf=0.71","timestamp":"2026-06-01T08:36:25.346197Z"}
+{"step":"route","status":"ok","model_used":null,"inputs":"plan=plan_3c7e3405","outputs":"AUTO","timestamp":"2026-06-01T08:36:25.347789Z"}
+{"step":"auto_action","status":"executed","model_used":"claude-sonnet-4-6 (offline)","inputs":"plan=plan_3c7e3405","outputs":"3 steps executed (risk=low)","timestamp":"2026-06-01T08:36:25.349298Z"}
+{"step":"ingest","status":"ok","model_used":null,"inputs":"scenario=latency_creep","outputs":"7 signals from 4 sources: app_metrics, infra_alerts, payment_events, support_tickets","timestamp":"2026-06-01T08:36:25.354407Z"}
+{"step":"detect","status":"ok","model_used":null,"inputs":"7 signals","outputs":"1 anomalies; severity={'LOW': 1}","timestamp":"2026-06-01T08:36:25.356048Z"}
+{"step":"triage","status":"ok","model_used":"claude-haiku-4-5-20251001 (offline)","inputs":"anomaly=p95_latency_ms","outputs":"LOW/P3","timestamp":"2026-06-01T08:36:25.362062Z"}
+{"step":"rca","status":"ok","model_used":"claude-sonnet-4-6 (offline)","inputs":"anomaly=p95_latency_ms; retrieval_conf=0.57","outputs":"conf=0.73; cites=3","timestamp":"2026-06-01T08:36:25.364049Z"}
+{"step":"plan","status":"ok","model_used":"claude-sonnet-4-6 (offline)","inputs":"anomaly=p95_latency_ms","outputs":"2 steps; risk=low; conf=0.69","timestamp":"2026-06-01T08:36:25.365467Z"}
+{"step":"route","status":"ok","model_used":null,"inputs":"plan=plan_1b5ca7c5","outputs":"AUTO","timestamp":"2026-06-01T08:36:25.366907Z"}
+{"step":"auto_action","status":"executed","model_used":"claude-sonnet-4-6 (offline)","inputs":"plan=plan_1b5ca7c5","outputs":"2 steps executed (risk=low)","timestamp":"2026-06-01T08:36:25.368070Z"}
+{"step":"ingest","status":"ok","model_used":null,"inputs":"scenario=noisy_benign","outputs":"7 signals from 4 sources: app_metrics, infra_alerts, payment_events, support_tickets","timestamp":"2026-06-01T08:36:25.373190Z"}
+{"step":"detect","status":"ok","model_used":null,"inputs":"7 signals","outputs":"0 anomalies; severity={}","timestamp":"2026-06-01T08:36:25.374749Z"}
+{"step":"ingest","status":"ok","model_used":null,"inputs":"scenario=low_retrieval_confidence","outputs":"8 signals from 4 sources: app_metrics, infra_alerts, payment_events, support_tickets","timestamp":"2026-06-01T08:36:25.384961Z"}
+{"step":"detect","status":"ok","model_used":null,"inputs":"8 signals","outputs":"1 anomalies; severity={'HIGH': 1}","timestamp":"2026-06-01T08:36:25.386677Z"}
+{"step":"triage","status":"ok","model_used":"claude-haiku-4-5-20251001 (offline)","inputs":"anomaly=reco_ctr","outputs":"HIGH/P1","timestamp":"2026-06-01T08:36:25.391562Z"}
+{"step":"rca","status":"low_confidence","model_used":"claude-sonnet-4-6 (offline)","inputs":"anomaly=reco_ctr; retrieval_conf=0.25","outputs":"conf=0.35; cites=3","timestamp":"2026-06-01T08:36:25.393993Z"}
+{"step":"plan","status":"ok","model_used":"claude-sonnet-4-6 (offline)","inputs":"anomaly=reco_ctr","outputs":"3 steps; risk=low; conf=0.33","timestamp":"2026-06-01T08:36:25.396049Z"}
+{"step":"route","status":"ok","model_used":null,"inputs":"plan=plan_d85785d8","outputs":"HITL: severity HIGH, low RCA confidence, RCA admitted uncertainty, low plan confidence","timestamp":"2026-06-01T08:36:25.397684Z"}
+{"step":"auto_action","status":"skipped","model_used":null,"inputs":"","outputs":"no auto-eligible plans","timestamp":"2026-06-01T08:36:25.398964Z"}
+{"step":"hitl","status":"pending","model_used":null,"inputs":"plan=plan_d85785d8","outputs":"pending (Queued for external approver (Slack/email/dashboard).)","timestamp":"2026-06-01T08:36:25.400156Z"}
